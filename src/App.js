@@ -14,7 +14,7 @@ import './App.css'
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <CheckingRoute exact path="/" component={Home} />
+    <CheckingRoute exact path="/Job-Searching-Application" component={Home} />
     <CheckingRoute exact path="/jobs" component={Jobs} />
     <CheckingRoute exact path="/jobs/:id" component={JobItemDetails} />
     <Route exact path="/not-found" component={NotFound} />

@@ -15,7 +15,7 @@ const Header = props => {
   return (
     <nav className="nav-container">
       <div className="large-display-cont">
-        <Link to="/">
+        <Link to="/Job-Searching-Application">
           <img
             className="logo-in-header"
             src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
@@ -23,7 +23,7 @@ const Header = props => {
           />
         </Link>
         <ul className="menu-container">
-          <Link to="/" className="list-text">
+          <Link to="/Job-Searching-Application" className="list-text">
             <li>Home</li>
           </Link>
           <Link to="/jobs" className="list-text">
@@ -47,7 +47,7 @@ const Header = props => {
           alt="website logo"
         />
         <div className="menu-container">
-          <Link to="/" className="list-text-icon">
+          <Link to="/Job-Searching-Application" className="list-text-icon">
             <AiFillHome />
           </Link>
           <Link to="/jobs" className="list-text-icon">
