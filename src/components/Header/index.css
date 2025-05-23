@@ -25,6 +25,7 @@
   padding: 5px;
   border-radius: 3px;
   width: 80px;
+  cursor: pointer;
 }
 .large-display-cont {
   display: none;

@@ -169,7 +169,12 @@ class JobItemDetails extends Component {
           <hr className="separator" />
           <div className="description-visit-link-container">
             <h1 className="description-heading-card">Description</h1>
-            <a href={companyWebsiteUrl} className="company-link">
+            <a
+              href={companyWebsiteUrl}
+              target="_blank"
+              className="company-link"
+              rel="noopener noreferrer"
+            >
               Visit
               <FiExternalLink className="external-link-logo" />
             </a>

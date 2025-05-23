@@ -27,6 +27,7 @@ class Jobs extends Component {
     searchInput: '',
     activeSalaryRangeId: '',
     employmentTypesChecked: [],
+    location: [],
   }
 
   componentDidMount() {
@@ -144,6 +145,17 @@ class Jobs extends Component {
     )
   }
 
+  activeLocation = loc => {
+    const {location} = this.state
+    if (location.includes(loc)) {
+      this.setState(prev => ({
+        location: prev.location.filter(each => each !== loc),
+      }))
+    } else {
+      this.setState(prev => ({location: [...prev.location, loc]}))
+    }
+  }
+
   renderSideBar = () => {
     const {
       profileDetails,
@@ -165,6 +177,7 @@ class Jobs extends Component {
           activeSalaryRangeId={activeSalaryRangeId}
           updateEmploymentTypesChecked={this.updateEmploymentTypesChecked}
           employmentTypesChecked={employmentTypesChecked}
+          activeLocation={this.activeLocation}
         />
       </div>
     )
@@ -185,12 +198,16 @@ class Jobs extends Component {
   )
 
   renderJobsList = () => {
-    const {jobsList} = this.state
+    const {jobsList, location} = this.state
+    const filteredJobs = jobsList.filter(each =>
+      location.includes(each.location),
+    )
+    const jobsListAfter = filteredJobs.length > 0 ? filteredJobs : jobsList
     return (
       <>
-        {jobsList.length > 0 ? (
+        {jobsListAfter.length > 0 ? (
           <ul className="jobs-list">
-            {jobsList.map(eachJob => (
+            {jobsListAfter.map(eachJob => (
               <JobCard key={eachJob.id} jobDetails={eachJob} />
             ))}
           </ul>

@@ -25,6 +25,7 @@ label {
   min-width: 300px;
   height: 40%;
   box-sizing: border-box;
+  box-shadow: 0 0 15px 8px rgb(56, 56, 56);
 }
 .login-logo-img {
   width: 100px;
@@ -51,6 +52,7 @@ label {
   color: #ffffff;
   background-color: #4f46e5;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .error-msg {
   align-self: flex-start;
